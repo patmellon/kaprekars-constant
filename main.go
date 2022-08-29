@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 	"kaprekars_constant/argvalidator"
+	"kaprekars_constant/digitvalidator"
 	"os"
-	"unicode/utf8"
 )
 
 func main() {
@@ -18,7 +18,7 @@ func main() {
 
 	digitString := os.Args[1]
 
-	charLengthErr := checkCharacterLength(digitString)
+	charLengthErr := digitvalidator.ValidateCharacterLength(digitString)
 
 	if charLengthErr != nil {
 		fmt.Println(charLengthErr)
@@ -26,14 +26,4 @@ func main() {
 	}
 
 	fmt.Println(digitString)
-}
-
-func checkCharacterLength(digitString string) error {
-	characterCount := utf8.RuneCountInString(digitString)
-
-	if characterCount != 4 {
-		return fmt.Errorf("Digit must have a length of 4")
-	}
-
-	return nil
 }
