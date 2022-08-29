@@ -47,13 +47,14 @@ func containsSameDigits(digitString string) bool {
 }
 
 func Validate(digitString string) error {
-	charLengthErr := validateCharacterLength(digitString)
-	intErr := validateDigitIsInt(digitString)
+	validateFunctions := []func(string) error{validateCharacterLength, validateDigitIsInt, validateTwoDifferentDigits}
 
-	if charLengthErr != nil {
-		return charLengthErr
-	} else if intErr != nil {
-		return intErr
+	for _, fn := range validateFunctions {
+		err := fn(digitString)
+
+		if err != nil {
+			return err
+		}
 	}
 
 	return nil
