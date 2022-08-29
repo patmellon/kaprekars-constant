@@ -22,8 +22,8 @@ func TestValidateLengthError(t *testing.T) {
 
 	expectedError := errors.New("Digit must have a length of 4")
 
-	for _, e := range tests {
-		result := validateCharacterLength(e)
+	for _, s := range tests {
+		result := validateCharacterLength(s)
 
 		if result.Error() != expectedError.Error() {
 			t.Errorf("Result was incorrect, got: %d, want: nil", result)
