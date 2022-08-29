@@ -5,6 +5,9 @@ import (
 	"kaprekars_constant/argvalidator"
 	"kaprekars_constant/digitvalidator"
 	"os"
+	"sort"
+	"strconv"
+	"strings"
 )
 
 func main() {
@@ -18,10 +21,10 @@ func main() {
 
 	digitString := os.Args[1]
 
-	charLengthErr := digitvalidator.ValidateCharacterLength(digitString)
+	digitErr := digitvalidator.Validate(digitString)
 
-	if charLengthErr != nil {
-		fmt.Println(charLengthErr)
+	if digitErr != nil {
+		fmt.Println(digitErr)
 		os.Exit(1)
 	}
 
