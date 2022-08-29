@@ -2,17 +2,17 @@ package main
 
 import (
 	"fmt"
-	"kaprekars_constant/argchecks"
+	"kaprekars_constant/argvalidator"
 	"os"
 	"unicode/utf8"
 )
 
 func main() {
 
-	argChecksErr := argchecks.CheckArgs(os.Args)
+	argErr := argvalidator.Validate(os.Args)
 
-	if argChecksErr != nil {
-		fmt.Println(argChecksErr)
+	if argErr != nil {
+		fmt.Println(argErr)
 		os.Exit(1)
 	}
 

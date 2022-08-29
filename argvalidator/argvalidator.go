@@ -1,11 +1,11 @@
 // Package for checking argument values
-package argchecks
+package argvalidator
 
 import (
 	"fmt"
 )
 
-func CheckArgs(args []string) error {
+func Validate(args []string) error {
 	if len(args) == 1 {
 		return fmt.Errorf("No argument provided")
 	} else if len(args) > 2 {
