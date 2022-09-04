@@ -3,10 +3,9 @@ package main
 import (
 	"fmt"
 	"kaprekars_constant/argvalidator"
+	c "kaprekars_constant/computevalues"
 	"kaprekars_constant/digitvalidator"
-	sh "kaprekars_constant/slicehelper"
 	"os"
-	"strings"
 )
 
 func main() {
@@ -27,7 +26,5 @@ func main() {
 		os.Exit(1)
 	}
 
-	var digit sh.DigitSlice = strings.Split(digitString, "")
-
-	fmt.Println(digit.SortAndConvert(true))
+	c.ComputeDigit(digitString, 1)
 }
