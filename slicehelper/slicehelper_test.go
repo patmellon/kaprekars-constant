@@ -42,7 +42,7 @@ func TestConvertSliceToInt(t *testing.T) {
 }
 
 func TestSortAndConvertDescending(t *testing.T) {
-	sortAndConverted := getSmallerDigit().SortAndConvert(false)
+	sortAndConverted := getSmallerDigit().SortDescending()
 	expectedResult := 4321
 
 	if sortAndConverted != expectedResult {
@@ -51,7 +51,7 @@ func TestSortAndConvertDescending(t *testing.T) {
 }
 
 func TestSortAndConvertAscending(t *testing.T) {
-	sortAndConverted := getLargerDigit().SortAndConvert(true)
+	sortAndConverted := getLargerDigit().SortAscending()
 	expectedResult := 1234
 
 	if sortAndConverted != expectedResult {

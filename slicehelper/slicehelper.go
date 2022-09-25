@@ -35,6 +35,14 @@ func (d DigitSlice) convertSliceToInt() int {
 	return digit
 }
 
-func (d DigitSlice) SortAndConvert(ascending bool) int {
+func (d DigitSlice) sortAndConvert(ascending bool) int {
 	return d.sortSlice(ascending).convertSliceToInt()
+}
+
+func (d DigitSlice) SortDescending() int {
+	return d.sortAndConvert(false)
+}
+
+func (d DigitSlice) SortAscending() int {
+	return d.sortAndConvert(true)
 }
