@@ -13,11 +13,9 @@ func ComputeDigit(d interface{}, iterations int) {
 
 	digit := determineType(d)
 
-	// Descending
-	descendingInt := digit.SortAndConvert(false)
+	descendingInt := digit.SortDescending()
 
-	// Ascending
-	ascendingInt := digit.SortAndConvert(true)
+	ascendingInt := digit.SortAscending()
 
 	result := descendingInt - ascendingInt
 
