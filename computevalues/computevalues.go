@@ -21,6 +21,11 @@ func ComputeDigit(d interface{}, iterations int) {
 
 	fmt.Println(result)
 
+	if len(convertIntToDigitSlice(result)) == 3 {
+		fmt.Printf("Kaprekar's Constant can't be found with repdigit: https://en.wikipedia.org/wiki/Repdigit")
+		return
+	}
+
 	if result != KaprekarsConstant {
 		ComputeDigit(result, iterations+1)
 	} else {
