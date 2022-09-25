@@ -28,7 +28,7 @@ func validateDigitIsInt(digitString string) error {
 }
 
 func validateTwoDifferentDigits(digitString string) error {
-	if containsSameDigits(digitString) == true {
+	if containsSameDigits(digitString) {
 		return fmt.Errorf("Digit must have at least two different numbers")
 	}
 
